@@ -1,0 +1,25 @@
+Argument:
+Selection Sort Psuedocode - 
+Input: arr[1, 2, .... , n]
+Output: Sorted arr
+func (arr, n) :
+loop i=1 to i=(n-1) :
+min = i
+loop j=i+1 to j=n :
+if arr[j] < arr[min] : min = j
+swap(arr[i], arr[min])
+Proof for inner loop: At start of every iteration, arr[min] is the smallest element in arr[i : j]
+- Initialization: i=min, j=i+1
+arr[i : j] = arr[i : i+1] = arr[one element] which is always sorted, so arr[min] is smallest element in an array of size 1
+- Maintenance: next iteration j=j+1
+For iteration j=j+1, if arr[j+1] < arr[min] then min=j+1 and arr[min] is now the new smallest element in arr[i : j+1]. If arr[j+1] > arr[min] then we do nothing and arr[min] continues to be the smallest element in arr[i : j+1]. Therefore the invariant holds.
+- Termination: Condition j = n
+Loop termination. Conclusion that arr[min] is the smallest in arr[i : n] which is the smallest element in the subarray arr[i : n-1]
+Proof for outer loop: At start of every iteration, arr[1 : i] contains i smallest elements of arr[1, .... , n] but sorted.
+- Initialization: arr[1 : i] where i = 1
+arr is empty, therefore the invariant is true
+- Maintenance: i = i+1
+For iteration i = i+1, we can assume that arr[min] is the smallest element in arr[i : n], and arr[1 : i-1] is sorted. We swap arr[i] with arr[min], therefore arr[1 : i] is sorted. arr[1 : i+1] contains the sorted i+1 smallest elements of original arr.
+- Termination: Condition i = n-1
+Assume arr[1 : n-1] contains n-1 sorted elements of arr. The last element of arr is automatically the largest element in arr, and is in the correct place in the sorted array. 
+The invariant holds true.
