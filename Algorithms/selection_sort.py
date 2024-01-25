@@ -6,7 +6,7 @@ def selection_sort(dataset):
 	for i in range(n):
 		# find smallest number in the non sorted part of the dataset
 		smallest_index = i
-		for j in range(i, n) :
+		for j in range(i+1, n) :
 			if dataset[j] < dataset[smallest_index]: smallest_index = j
 		dataset[smallest_index], dataset[i] = dataset[i], dataset[smallest_index]
 		
