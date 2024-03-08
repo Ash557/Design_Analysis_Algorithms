@@ -24,8 +24,6 @@ class Linked_List:
 	def list_insert(self, node):
 		print("Insert Node: " + str(node.key))
 		node.next = self.head
-		if self.head != None:
-			node.next = self.head
 		self.head = node
 
 	# Find and delete specified node
