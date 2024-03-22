@@ -1,3 +1,5 @@
+Hands-On 3 Discussion Assignment
+
 function x = f(n)
    x = 1;
    for i = 1:n
